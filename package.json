@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/xian145/API-Express-DB#readme",
   "dependencies": {
+    "@prisma/client": "^3.13.0",
     "jest": "^26.0.0"
   },
   "devDependencies": {
