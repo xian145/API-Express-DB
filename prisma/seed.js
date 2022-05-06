@@ -53,6 +53,42 @@ const prisma = new PrismaClient();
         },
       });
 
+      const estudiante1 = await prisma.Estudiante.upsert({
+        where: {name: 'Luis Perez'},
+        update: {},
+        create: {
+          name: 'Luis Perez',
+          lang: 'spanish',
+          missionCommander: 'Carlo',
+          enrollments: 2,
+          hasCertification: true,
+        }
+      });
+
+      const estudiante2 = await prisma.Estudiante.upsert({
+        where: {name: 'Horacio Parra'},
+        update: {},
+        create: {
+          name: 'Horacio Parra',
+          lang: 'english',
+          missionCommander: 'Fernanda',
+          enrollments: 5,
+          hasCertification: true,
+        }
+      });
+
+      const estudiante3 = await prisma.Estudiante.upsert({
+        where: {name: 'Abraham Arizmendi'},
+        update: {},
+        create: {
+          name: 'Abraham Arizmendi',
+          lang: 'spanish',
+          missionCommander: 'Carlo',
+          enrollments: 3,
+          hasCertification: true,
+        }
+      });
+
     console.log('Create 4 explorers');
   } catch(e) {
     console.error(e);
