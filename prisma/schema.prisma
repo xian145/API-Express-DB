@@ -28,3 +28,12 @@ model Estudiante {
   enrollments Int
   hasCertification Boolean @default(false)
 }
+
+model missionCommander {
+  id Int @id @default(autoincrement())
+  name String @unique
+  username String @db.VarChar(255)
+  mainStack String @db.VarChar(255)
+  currentEnrollment Boolean @default(true)
+  hasCertification Boolean @default(true)
+}
