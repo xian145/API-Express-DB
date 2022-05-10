@@ -89,6 +89,16 @@ const prisma = new PrismaClient();
             }
         });
 
+        const commander1 = await prisma.missionCommander.upsert({
+            where: {name: "Carlo"},
+            update: {},
+            create: {
+                name: "Carlo",
+                username: "CarloGilmar",
+                mainStack: "node"
+            }
+        });
+
         console.log("Create 4 explorers");
     } catch(e) {
         console.error(e);
